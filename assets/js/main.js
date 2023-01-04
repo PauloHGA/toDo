@@ -1,4 +1,4 @@
-window.addEventListener('load', () =>{
+window.addEventListener('load', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
     const newTodoForm = document.querySelector('#new-todo-form');
@@ -16,7 +16,7 @@ window.addEventListener('load', () =>{
 
         const todo = {
             content: e.target.elements.content.value,
-            categoty: e.target.elements.category.value,
+            category: e.target.elements.category.value,
             done: false,
             createAt: new Date().getTime()
         }
@@ -45,6 +45,7 @@ function DisplayTodos () {
         const label = document.createElement('label');
         const input = document.createElement('input');
         const span = document.createElement('span');
+
         const content = document.createElement('div');
         const actions = document.createElement('div');
         const edit = document.createElement('button');
@@ -62,7 +63,7 @@ function DisplayTodos () {
 
         content.classList.add('todo-content');
         actions.classList.add('actions');
-        edit.classList.add('edit')
+        edit.classList.add('edit');
         deleteButton.classList.add('delete');
 
         content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
